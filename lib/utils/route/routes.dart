@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:small_home_application/utils/route/routes_name.dart';
+import 'package:small_home_application/view/device_active_screen.dart';
 import 'package:small_home_application/view/home_screen.dart';
 import 'package:small_home_application/view/parent_screen.dart';
 
@@ -15,6 +16,8 @@ class Routes {
       //   );
       case RoutesName.parentScreen:
         return MaterialPageRoute(builder: (context) => const ParentScreen(),);
+        case RoutesName.deviceActiveScreen:
+        return MaterialPageRoute(builder: (context) => const DeviceActiveScreen(),);
       default:
         return MaterialPageRoute(builder: (context) {
           return const Scaffold(

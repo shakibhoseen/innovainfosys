@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class BottomNavBarViewModel with ChangeNotifier{
-  int _index = 1;
+  int _index = 0;
 
   get pageIndex => _index;
 

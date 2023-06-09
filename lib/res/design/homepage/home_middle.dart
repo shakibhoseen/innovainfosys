@@ -10,6 +10,7 @@ import 'package:small_home_application/res/design/mini_box.dart';
 import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/res/symbol.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
+import 'package:small_home_application/utils/route/routes_name.dart';
 
 final List<HomeRoomModel> roomItems = [
   HomeRoomModel(AssetsName.livingRoomHomePng, 5, 'Living Room', 19),
@@ -120,7 +121,7 @@ final List<DeviceActiveModel> deviceActiveItems = [
       "12$degreeCentiGrade", false),
 ];
 
-List<Widget> homePageActiveDesign() {
+List<Widget> homePageActiveDesign(BuildContext context) {
   return [
     Padding(
       padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
@@ -138,10 +139,15 @@ List<Widget> homePageActiveDesign() {
               miniBadgeBox('6'),
             ],
           ),
-          Text(
-            'See All',
-            style: Constant.popins_lg(
-                color: MyColors.main2Color, fontWeight: FontWeight.w600),
+          InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, RoutesName.deviceActiveScreen);
+            },
+            child: Text(
+              'See All',
+              style: Constant.popins_lg(
+                  color: MyColors.main2Color, fontWeight: FontWeight.w600),
+            ),
           ),
         ],
       ),

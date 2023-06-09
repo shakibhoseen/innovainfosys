@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:small_home_application/res/my_colors.dart';
-import 'package:small_home_application/view/home_screen.dart';
-import 'package:small_home_application/view/parent_screen.dart';
+import 'package:small_home_application/utils/route/routes.dart';
+import 'package:small_home_application/utils/route/routes_name.dart';
 import 'package:small_home_application/view_model/bottom_nav_bar_view_model.dart';
 
 void main() {
@@ -33,12 +33,13 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primaryColor: MyColors.main2Color,
           secondaryHeaderColor: MyColors.mainColor,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             backgroundColor: MyColors.main2Color,
           ),
           canvasColor: MyColors.backGroundApplicationColor,
         ),
-        home: const ParentScreen(),
+        initialRoute:  RoutesName.parentScreen,
+        onGenerateRoute:  Routes.genarateRoute,
       ),
     );
   }

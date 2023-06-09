@@ -20,24 +20,13 @@ class HomePage extends StatelessWidget {
           flexibleSpace: FlexibleSpaceBar(
             background: backgorundAppBar(),
           ),
-          // bottom: PreferredSize(
-          //   preferredSize: const Size.fromHeight(80),
-          //   child: ClipPath(
-          //     clipper: WaveClipper(),
-          //     child: Container(
-          //       width: double.infinity,
-          //         height: 60,
-          //         color: Colors.green,
-          //         child: Text("hey")),
-          //   ),
-          // ),
         ),
 
         SliverToBoxAdapter(
           child: Column(
             children: [
               ...homePageRoomDesign(),
-              ...homePageActiveDesign(),
+              ...homePageActiveDesign(context),
             ],
           )
         ),
