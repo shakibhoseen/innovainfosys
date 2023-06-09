@@ -18,10 +18,19 @@ class AssetsName {
   static const String windIconImageSvg = 'assets/images/wind.svg';
   static const String filterIconImageSvg = 'assets/images/filter_icon.svg';
 
+  static const String deleteIconImageSvg = 'assets/images/delete.svg';
+  static const String editIconImageSvg = 'assets/images/edit.svg';
+
   //png active home page
   static const String acImagePng = 'assets/images/ac_active.png';
   static const String threeLampImagePng = 'assets/images/three_lamp_active.png';
   static const String tvnImagePng = 'assets/images/tvn_active.png';
   static const String wifyImagePng = 'assets/images/wify_active.png';
+
+  //png smart mood page
+  static const String lightSmartImagePng = 'assets/images/light.png';
+  static const String airSmartImagePng = 'assets/images/smart_air.png';
+  static const String tvSmartImagePng = 'assets/images/smart_tv.png';
+
 
 }

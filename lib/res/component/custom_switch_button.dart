@@ -4,9 +4,10 @@ import 'package:small_home_application/res/constant.dart';
 
 class CustomSwitchButton extends StatefulWidget {
   final ValueChanged<bool> onChanged;
-
+  final bool isSwitchOn;
    const CustomSwitchButton({super.key,
     required this.onChanged,
+     this.isSwitchOn = false,
   });
 
   @override
@@ -30,6 +31,7 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton>
   @override
   void initState() {
     super.initState();
+    _isOn = widget.isSwitchOn;
   }
 
   void _toggleSwitch() {

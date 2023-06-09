@@ -4,6 +4,7 @@ import 'package:small_home_application/res/component/my_shadow.dart';
 import 'package:small_home_application/res/component/wave_clipper.dart';
 import 'package:small_home_application/res/constant.dart';
 import 'package:small_home_application/res/design/smart_page/smart_header.dart';
+import 'package:small_home_application/res/design/smart_page/smart_middle.dart';
 import 'package:small_home_application/res/my_colors.dart';
 
 class SmartPage extends StatelessWidget {
@@ -35,120 +36,14 @@ class SmartPage extends StatelessWidget {
           //   ),
           // ),
         ),
-        SliverToBoxAdapter(
-          child: ClipPath(
-            clipper: WaveClipper(),
-            child: Container(
-              color: Colors.red,
-              height: 200,
-              width: 200,
-              alignment: Alignment.center,
-              child: const Text(
-                "Wave clipper",
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        ),
+
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100.0,
-              decoration: BoxDecoration(
-                boxShadow: MyShadow.boxShadow1(),
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: Text('index', textScaleFactor: 5),
-              ),
-            ),
+            padding: const EdgeInsets.all(16.0),
+            child: smartHomeDesign(),
           ),
         ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100.0,
-              decoration: BoxDecoration(
-                boxShadow: MyShadow.boxShadow2(),
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: Text('index', textScaleFactor: 5),
-              ),
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100.0,
-              decoration: BoxDecoration(
-                boxShadow: MyShadow.boxShadow3(),
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: Text('index', textScaleFactor: 5),
-              ),
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100.0,
-              decoration: BoxDecoration(
-                boxShadow: MyShadow.boxShadow4(),
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: Text('index', textScaleFactor: 5),
-              ),
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100.0,
-              decoration: BoxDecoration(
-                boxShadow: MyShadow.boxShadow5(),
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: Text('index', textScaleFactor: 5),
-              ),
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 100.0,
-              decoration: BoxDecoration(
-                boxShadow: MyShadow.boxShadow6(),
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: Text('index', textScaleFactor: 5),
-              ),
-            ),
-          ),
-        ),
+
       ],
     );
   }

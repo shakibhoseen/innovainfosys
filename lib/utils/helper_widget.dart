@@ -11,3 +11,11 @@ Widget addHorizontalSpace(double width) {
     width: width,
   );
 }
+Widget customVerticalDivider({Color color = Colors.grey}) {
+  return VerticalDivider(
+    thickness: 1,
+    color: color,
+  );
+}
+
+
