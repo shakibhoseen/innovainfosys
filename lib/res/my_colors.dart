@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
 class MyColors {
-  static Color white = const Color(0xFFFFFFFF);
-  static Color backGroundCardColor = const Color(0xFFF9FBFB);
-  static Color backGroundApplicationColor = const Color(0xFFEDEDED);
-  static Color buttonDisableColor = const Color(0xFFCDCDCD);
-  static Color textDisableColor = const Color(0xFF999999);
-  static Color textColor = const Color(0xFF404040);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color backGroundCardColor = Color(0xFFF9FBFB);
+  static const Color backGroundApplicationColor = Color(0xFFEDEDED);
+  static const Color buttonDisableColor = Color(0xFFCDCDCD);
+  static const Color textDisableColor = Color(0xFF999999);
+  static const Color textColor = Color(0xFF404040);
 
-  static Color surfaceColor = const Color(0xFFE7DDDA);
-  static Color mainColor = const Color(0xFF9A7265);
-  static Color surface2Color = const Color(0xFFD8E4E8);
-  static Color main2Color = const Color(0xFF4C7380);
-  static Color surface3Color = const Color(0xFFE0EBE2);
-  static Color main3Color = const Color(0xFF659A6E);
-
+  static const Color surfaceColor = Color(0xFFE7DDDA);
+  static const Color mainColor = Color(0xFF9A7265);
+  static const Color surface2Color = Color(0xFFD8E4E8);
+  static const Color main2Color = Color(0xFF4C7380);
+  static const Color surface3Color = Color(0xFFE0EBE2);
+  static const Color main3Color = Color(0xFF659A6E);
 }

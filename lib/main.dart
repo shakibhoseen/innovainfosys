@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
             backgroundColor: MyColors.main2Color,
           ),
+          canvasColor: MyColors.backGroundApplicationColor,
         ),
         home: const ParentScreen(),
       ),

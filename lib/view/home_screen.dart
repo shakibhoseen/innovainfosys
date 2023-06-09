@@ -5,6 +5,7 @@ import 'package:small_home_application/res/component/my_custom_painter.dart';
 import 'package:small_home_application/res/component/my_custom_shape.dart';
 import 'package:small_home_application/res/component/my_shadow.dart';
 import 'package:small_home_application/res/my_colors.dart';
+import 'package:small_home_application/utils/helper_widget.dart';
 
 import '../res/constant.dart';
 
@@ -195,9 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Column(
         children: [
-          SizedBox(
-            height: 100,
-          ),
+          addVerticalSpace(100),
           Container(
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
@@ -207,8 +206,9 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset('assets/images/sun_behind_cloud.svg',
-                        semanticsLabel: 'Sun behind the cloud',
+                    SvgPicture.asset(
+                      'assets/images/sun_behind_cloud.svg',
+                      semanticsLabel: 'Sun behind the cloud',
                       height: 60,
                       width: 60,
                     ),
@@ -216,7 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );

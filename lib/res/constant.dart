@@ -14,7 +14,7 @@ class Constant {
 
   static TextStyle popins_xl(
           {Color color = Colors.black,
-          FontWeight fontWeight = FontWeight.w400}) =>
+          FontWeight fontWeight = FontWeight.w600}) =>
       GoogleFonts.poppins(color: color, fontWeight: fontWeight, fontSize: 18);
 
   static TextStyle popins_lg(
