@@ -3,6 +3,7 @@ import 'package:small_home_application/res/component/my_custom_shape.dart';
 import 'package:small_home_application/res/component/my_shadow.dart';
 import 'package:small_home_application/res/component/wave_clipper.dart';
 import 'package:small_home_application/res/constant.dart';
+import 'package:small_home_application/res/design/smart_page/smart_header.dart';
 import 'package:small_home_application/res/my_colors.dart';
 
 class SmartPage extends StatelessWidget {
@@ -13,14 +14,14 @@ class SmartPage extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
-          collapsedHeight: 150,
-          toolbarHeight: 100,
+          collapsedHeight: 100,
+          toolbarHeight: 50,
           shape: MyCustomShape(30),
           pinned: true,
-          expandedHeight: 290.0,
-          title: header(),
+          expandedHeight: 170.0,
+          title: header(context),
           flexibleSpace: FlexibleSpaceBar(
-            background: backgorundAppBar(),
+            background: backgroundAppBar(),
           ),
           // bottom: PreferredSize(
           //   preferredSize: const Size.fromHeight(80),
@@ -153,63 +154,6 @@ class SmartPage extends StatelessWidget {
   }
 }
 
-Widget header() {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: [
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Good morning',
-              style: Constant.popins_changeable_size(
-                  fontSize: 24, color: Colors.white),
-              maxLines: 1,
-            ),
-            Text(
-              'Hello there!',
-              style: Constant.popins_base(),
-              maxLines: 1,
-            ),
-            Text(
-              'Hello there!',
-              style: Constant.popins_base(),
-              maxLines: 1,
-            )
-          ],
-        ),
-      ),
-      IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
-    ],
-  );
-}
 
-Widget backgorundAppBar() {
-  return Container(
-    decoration: ShapeDecoration(
 
-      shape: MyCustomShape(30),
-      color: MyColors.main2Color,
-    ),
-    child: Column(
-      children: [
-        SizedBox(height: 100,),
-        Text(
-          'i love you',
-          style: Constant.popins_lg(),
-        ),
-        Text(
-          'i love you',
-          style: Constant.popins_lg(),
-        ),
-        Text(
-          'i love you',
-          style: Constant.popins_lg(),
-        ),
-      ],
-    ),
-  );
-}
+

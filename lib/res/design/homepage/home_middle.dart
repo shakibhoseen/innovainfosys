@@ -39,9 +39,9 @@ List<Widget> homePageRoomDesign() {
         ],
       ),
     ),
-    addVerticalSpace(9),
+
     SizedBox(
-      height: 220,
+      height: 200,
       child: ListView.builder(
         itemCount: roomItems.length,
         shrinkWrap: true,
@@ -58,50 +58,47 @@ List<Widget> homePageRoomDesign() {
 }
 
 Widget homeRoomItemDesign(HomeRoomModel roomModel) {
-  return SizedBox(
-    height: 210,
-    child: AspectRatio(
-      aspectRatio: 0.85,
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          boxShadow: MyShadow.boxShadow2(),
-          color: MyColors.surface2Color,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Row(
-              children: [
-                miniBadgeBox('${roomModel.temperature}$degreeCentiGrade'),
-              ],
-            ),
-            addVerticalSpace(8),
-            Image.asset(
-              roomModel.imageAsset,
-              semanticLabel: 'image',
-              height: 100,
-              width: 100,
-            ),
-            Text(
-              roomModel.title,
-              style: Constant.popins_xl(fontWeight: FontWeight.w600),
-              maxLines: 1,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                miniYellowBadgeBox('${roomModel.numberDevice}'),
-                addHorizontalSpace(4),
-                Text(
-                  'devices',
-                  style: Constant.popins_sm(),
-                ),
-              ],
-            ),
-          ],
-        ),
+  return AspectRatio(
+    aspectRatio: 0.85,
+    child: Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        boxShadow: MyShadow.boxShadow2(),
+        color: MyColors.surface2Color,
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Row(
+            children: [
+              miniBadgeBox('${roomModel.temperature}$degreeCentiGrade'),
+            ],
+          ),
+          addVerticalSpace(8),
+          Image.asset(
+            roomModel.imageAsset,
+            semanticLabel: 'image',
+            height: 90,
+            width: 90,
+          ),
+          Text(
+            roomModel.title,
+            style: Constant.popins_xl(fontWeight: FontWeight.w600),
+            maxLines: 1,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              miniYellowBadgeBox('${roomModel.numberDevice}'),
+              addHorizontalSpace(4),
+              Text(
+                'devices',
+                style: Constant.popins_sm(),
+              ),
+            ],
+          ),
+        ],
       ),
     ),
   );
@@ -126,13 +123,20 @@ final List<DeviceActiveModel> deviceActiveItems = [
 List<Widget> homePageActiveDesign() {
   return [
     Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'Active',
-            style: Constant.popins_xl(fontWeight: FontWeight.w600),
+
+          Row(
+            children: [
+              Text(
+                'Active',
+                style: Constant.popins_xl(fontWeight: FontWeight.w600),
+              ),
+              addHorizontalSpace(2),
+              miniBadgeBox('6'),
+            ],
           ),
           Text(
             'See All',
@@ -142,7 +146,7 @@ List<Widget> homePageActiveDesign() {
         ],
       ),
     ),
-    addVerticalSpace(9),
+
     SizedBox(
       height: 175,
       child: ListView.builder(
@@ -162,7 +166,7 @@ List<Widget> homePageActiveDesign() {
 
 Widget homeActiveItemDesign(DeviceActiveModel activeModel) {
   return SizedBox(
-    width: 165,
+    width: 175,
     child: AspectRatio(
       aspectRatio: 1.2,
       child: Container(
@@ -170,10 +174,19 @@ Widget homeActiveItemDesign(DeviceActiveModel activeModel) {
         decoration: BoxDecoration(
           boxShadow: MyShadow.boxShadow2(),
           color: MyColors.mainColor,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
         ),
         child: Stack(
           children: [
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Image.asset(
+                activeModel.imageAsset,
+                height: 80,
+                width: 80,
+              ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -185,7 +198,8 @@ Widget homeActiveItemDesign(DeviceActiveModel activeModel) {
                 const Spacer(),
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Flexible(
                       child: Column(
@@ -204,15 +218,7 @@ Widget homeActiveItemDesign(DeviceActiveModel activeModel) {
                 ),
               ],
             ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: SvgPicture.asset(
-                activeModel.imageAsset,
-                height: 80,
-                width: 80,
-              ),
-            ),
+
 
           ],
         ),

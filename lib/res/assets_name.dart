@@ -16,8 +16,9 @@ class AssetsName {
   static const String sunBehindCloudImageSvg =
       'assets/images/sun_behind_cloud.svg';
   static const String windIconImageSvg = 'assets/images/wind.svg';
+  static const String filterIconImageSvg = 'assets/images/filter_icon.svg';
 
-  //svg active home page
+  //png active home page
   static const String acImagePng = 'assets/images/ac_active.png';
   static const String threeLampImagePng = 'assets/images/three_lamp_active.png';
   static const String tvnImagePng = 'assets/images/tvn_active.png';

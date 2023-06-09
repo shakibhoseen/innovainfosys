@@ -1,0 +1,5 @@
+{
+    "editor.defaultFoldingRangeProvider": "Dart-Code.flutter",
+    "editor.foldingImportsByDefault": false,
+    "editor.foldingStrategy": "indentation"
+}

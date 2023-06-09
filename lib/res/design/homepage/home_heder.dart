@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:small_home_application/model/weather_small_item.dart';
 import 'package:small_home_application/res/assets_name.dart';
 import 'package:small_home_application/res/component/my_custom_shape.dart';
+import 'package:small_home_application/res/component/my_shadow.dart';
 import 'package:small_home_application/res/constant.dart';
 import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
@@ -19,7 +20,7 @@ Widget header() {
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -40,9 +41,10 @@ Widget header() {
         ),
       ),
       Container(
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
+          boxShadow: MyShadow.boxShadow5(),
         ),
         child: IconButton(
           onPressed: () {},
@@ -66,21 +68,21 @@ Widget backgorundAppBar() {
     child: Stack(
       children: [
         Positioned(
-          left: -25,
-          top: 10,
+          left: -35,
+          top: -12,
           child: SvgPicture.asset(AssetsName.cloudImageSvg1),
         ),
 
         Positioned(
-          right: -2,
-          top: -4,
+          right: -5,
+          top: -12,
           child: SvgPicture.asset(AssetsName.cloudImageSvg2),
         ),
 
         hederWeatherBox(),
 
         Positioned(
-          right: 10,
+          right: 5,
           bottom: 34,
           child: SvgPicture.asset(AssetsName.sunImageSvg),
         ),
@@ -94,7 +96,7 @@ Widget hederWeatherBox() {
     padding: const EdgeInsets.all(12.0),
     child: Column(
       children: [
-        addVerticalSpace(100),
+        addVerticalSpace(90),
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(

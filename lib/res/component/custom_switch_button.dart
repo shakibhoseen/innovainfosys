@@ -15,9 +15,9 @@ class CustomSwitchButton extends StatefulWidget {
 
 class _CustomSwitchButtonState extends State<CustomSwitchButton>
     with SingleTickerProviderStateMixin {
-  final double _switchHeight = 35;
+  final double _switchHeight = 30;
 
-  final double _switchWidth = 80;
+  final double _switchWidth = 65;
   final Duration _animationDuration = const Duration(milliseconds: 300);
   Color lightOnColor = Colors.green.shade300;
   Color deepOnColor = Colors.green.shade900;
@@ -45,9 +45,9 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton>
     return GestureDetector(
       onTap: _toggleSwitch,
       child: Container(
-        width: _switchWidth + 4,
-        height: _switchHeight + 4,
-        padding: const EdgeInsets.all(2),
+        width: _switchWidth ,
+        height: _switchHeight ,
+        //padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
           color: _isOn ? lightOnColor : lightOffColor,
           borderRadius: BorderRadius.circular(25),
@@ -75,7 +75,7 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton>
             AnimatedPositioned(
               top: 0,
               bottom: 0,
-              left: _isOn ? 0 : _switchWidth - 2 - _switchHeight,
+              left: _isOn ? -3 : _switchWidth-2 - _switchHeight,
               duration: _animationDuration,
               child: AnimatedRotation(
                 turns: _isOn ? -.2 : .2,

@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       slivers: [
         SliverAppBar(
           collapsedHeight: 150,
-          toolbarHeight: 100,
+          toolbarHeight: 60,
           shape: MyCustomShape(30),
           pinned: true,
           expandedHeight: 310.0,
