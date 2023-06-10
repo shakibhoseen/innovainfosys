@@ -20,6 +20,8 @@ class AssetsName {
 
   static const String deleteIconImageSvg = 'assets/images/delete.svg';
   static const String editIconImageSvg = 'assets/images/edit.svg';
+  static const String downIconImageSvg = 'assets/images/down.svg';
+  static const String upIconImageSvg = 'assets/images/up.svg';
 
   //png active home page
   static const String acImagePng = 'assets/images/ac_active.png';
