@@ -10,21 +10,22 @@ Widget header(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Row(
-        children: [
-          InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: const Padding(
-                padding: EdgeInsets.all(4.0),
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  size: 16,
-                ),
-              )),
-          Text('Back', style: Constant.popins_sm(color: Colors.white)),
-        ],
+      InkWell(
+        onTap: () {
+          Navigator.of(context).pop();
+        },
+        child: Row(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(4.0),
+              child: Icon(
+                Icons.arrow_back_ios,
+                size: 16,
+              ),
+            ),
+            Text('Back', style: Constant.popins_sm(color: Colors.white)),
+          ],
+        ),
       ),
       Text('Devices Active',
           style: Constant.popins_changeable_size(
@@ -91,7 +92,7 @@ Widget deviceActiveHomeDesign() {
             // Handle button press
           },
           style: ElevatedButton.styleFrom(
-            primary: MyColors.mainColor,
+            backgroundColor: MyColors.mainColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
