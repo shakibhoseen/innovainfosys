@@ -55,7 +55,11 @@ List<Widget> homePageRoomDesign(BuildContext context) {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 4),
-            child: homeRoomItemDesign(roomItems[index]),
+            child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, RoutesName.livingRoomScreen);
+                },
+                child: homeRoomItemDesign(roomItems[index])),
           );
         },
       ),
@@ -167,7 +171,11 @@ List<Widget> homePageActiveDesign(BuildContext context) {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 4),
-            child: homeActiveItemDesign(deviceActiveItems[index]),
+            child: GestureDetector(
+              onTap: (){
+                  Navigator.pushNamed(context, RoutesName.lampScreen);
+              },
+                child: homeActiveItemDesign(deviceActiveItems[index])),
           );
         },
       ),

@@ -6,6 +6,7 @@ import 'package:small_home_application/res/component/wave_clipper.dart';
 import 'package:small_home_application/res/constant.dart';
 import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
+import 'package:small_home_application/utils/utils.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -89,7 +90,9 @@ Widget backgorundAppBar() {
     child: Column(
       children: [
         addVerticalSpace(50),
-        SizedBox(height: 180, child: CustomStepperProgress()),
+        SizedBox(height: 180, child: CustomStepperProgress(onChanged: (value){
+          Utils.showToastMessage('the value is ${value}');
+        },)),
       ],
     ),
   );

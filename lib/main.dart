@@ -4,6 +4,7 @@ import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/utils/route/routes.dart';
 import 'package:small_home_application/utils/route/routes_name.dart';
 import 'package:small_home_application/view_model/bottom_nav_bar_view_model.dart';
+import 'package:small_home_application/view_model/lamp_view_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_)=> BottomNavBarViewModel()),
+        ChangeNotifierProvider(create: (_)=> LampViewModel()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

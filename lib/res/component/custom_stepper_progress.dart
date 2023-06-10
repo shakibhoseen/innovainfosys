@@ -3,11 +3,16 @@ import 'package:small_home_application/res/component/my_shadow.dart';
 import 'package:small_home_application/res/my_colors.dart';
 
 class CustomStepperProgress extends StatefulWidget {
+  final ValueChanged<double> onChanged;
+
+  const CustomStepperProgress({Key? key, required this.onChanged}) : super(key: key);
+
   @override
   _CustomSliderState createState() => _CustomSliderState();
 }
 
 class _CustomSliderState extends State<CustomStepperProgress> {
+
   double _value = 0.5;
   Color thumbColor = Colors.indigo.shade900;
   Color thumbInactiveColor = Colors.grey;
@@ -59,34 +64,7 @@ class _CustomSliderState extends State<CustomStepperProgress> {
                       ),
                   ],
                 ),
-                SliderTheme(
-                  data: SliderTheme.of(context).copyWith(
-                    thumbShape: CustomSliderThumbShape(
-                      thumbRadius: 16.0,
-                      backgroundColor: MyColors.mainColor,
-                      borderColor: Colors.white,
-                      borderWidth: 2.0,
-                      boxShadow: MyShadow.boxShadow5(),
-                    ),
-                    overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0,),
-                    //trackHeight: 12.0,
-                    activeTrackColor: Colors.transparent, // Change the color of the active track
-                    inactiveTrackColor: Colors.transparent,
-
-                  ),
-                  child: Slider(
-                    value: _value,
-                    min: 0.0,
-                    max: 1.0,
-
-                    onChanged: (newValue) {
-                      setState(() {
-                        _value = newValue;
-                        print(_value);
-                      });
-                    },
-                  ),
-                ),
+                customSliderItem(),
               ],
             ),
 
@@ -109,8 +87,8 @@ class _CustomSliderState extends State<CustomStepperProgress> {
         ),
         overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0,),
         //trackHeight: 12.0,
-        activeTrackColor: Colors.green, // Change the color of the active track
-        inactiveTrackColor: Colors.grey,
+        activeTrackColor: Colors.transparent,
+        inactiveTrackColor: Colors.transparent,
 
       ),
       child: Slider(
@@ -121,9 +99,11 @@ class _CustomSliderState extends State<CustomStepperProgress> {
         onChanged: (newValue) {
           setState(() {
             _value = newValue;
-            print(_value);
+            widget.onChanged(newValue);
+
           });
         },
+
       ),
     );
   }

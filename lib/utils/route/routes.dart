@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:small_home_application/utils/route/routes_name.dart';
 import 'package:small_home_application/view/device_active_screen.dart';
 import 'package:small_home_application/view/home_screen.dart';
+import 'package:small_home_application/view/lamp_screen.dart';
+import 'package:small_home_application/view/living_room_screen.dart';
 import 'package:small_home_application/view/parent_screen.dart';
 import 'package:small_home_application/view/room_screen.dart';
 
@@ -22,6 +24,14 @@ class Routes {
       case RoutesName.roomScreen:
         return MaterialPageRoute(
           builder: (context) => const RoomScreen(),
+        );
+        case RoutesName.lampScreen:
+        return MaterialPageRoute(
+          builder: (context) => const LampScreen(),
+        );
+        case RoutesName.livingRoomScreen:
+        return MaterialPageRoute(
+          builder: (context) => const LivingScreenRoom(),
         );
       default:
         return MaterialPageRoute(builder: (context) {

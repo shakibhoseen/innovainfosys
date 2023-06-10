@@ -22,12 +22,22 @@ class AssetsName {
   static const String editIconImageSvg = 'assets/images/edit.svg';
   static const String downIconImageSvg = 'assets/images/down.svg';
   static const String upIconImageSvg = 'assets/images/up.svg';
+  //living room
+  static const String wifyLivingRoomImageSvg = 'assets/images/wifi.svg';
+  static const String lampLivingRoomImageSvg = 'assets/images/lamp.svg';
+  static const String keyLivingRoomImageSvg = 'assets/images/suhu.svg';
+
 
   //png active home page
   static const String acImagePng = 'assets/images/ac_active.png';
   static const String threeLampImagePng = 'assets/images/three_lamp_active.png';
   static const String tvnImagePng = 'assets/images/tvn_active.png';
   static const String wifyImagePng = 'assets/images/wify_active.png';
+
+  //background
+  static const String lamLightBgPng = 'assets/images/lam_light_bg.png';
+  static const String lamLightOnPng = 'assets/images/light_on.png';
+  static const String lamLightOffPng = 'assets/images/light_off.png';
 
   //png smart mood page
   static const String lightSmartImagePng = 'assets/images/light.png';
