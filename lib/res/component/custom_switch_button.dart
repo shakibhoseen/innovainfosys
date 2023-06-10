@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:small_home_application/res/constant.dart';
+import 'package:small_home_application/res/my_colors.dart';
 
 class CustomSwitchButton extends StatefulWidget {
   final ValueChanged<bool> onChanged;
@@ -20,11 +21,11 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton>
 
   final double _switchWidth = 65;
   final Duration _animationDuration = const Duration(milliseconds: 300);
-  Color lightOnColor = Colors.green.shade300;
-  Color deepOnColor = Colors.green.shade900;
+  Color lightOnColor = MyColors.surfaceColor;
+  Color deepOnColor = MyColors.mainColor;
 
-  Color lightOffColor = Colors.red.shade300;
-  Color deepOffColor = Colors.red.shade900;
+  Color lightOffColor = MyColors.surface3Color;
+  Color deepOffColor = MyColors.main3Color;
 
   bool _isOn = false;
 

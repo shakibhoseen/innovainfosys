@@ -21,7 +21,7 @@ final List<HomeRoomModel> roomItems = [
   HomeRoomModel(AssetsName.messRoomHomePng, 34, 'Bed Room 2', 18),
 ];
 
-List<Widget> homePageRoomDesign() {
+List<Widget> homePageRoomDesign(BuildContext context) {
   return [
     Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -32,10 +32,15 @@ List<Widget> homePageRoomDesign() {
             'Rooms',
             style: Constant.popins_xl(fontWeight: FontWeight.w600),
           ),
-          Text(
-            'See All',
-            style: Constant.popins_lg(
-                color: MyColors.main2Color, fontWeight: FontWeight.w600),
+          InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, RoutesName.roomScreen);
+            },
+            child: Text(
+              'See All',
+              style: Constant.popins_lg(
+                  color: MyColors.main2Color, fontWeight: FontWeight.w600),
+            ),
           ),
         ],
       ),
@@ -60,7 +65,7 @@ List<Widget> homePageRoomDesign() {
 
 Widget homeRoomItemDesign(HomeRoomModel roomModel) {
   return AspectRatio(
-    aspectRatio: 0.85,
+    aspectRatio: 0.80,
     child: Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(

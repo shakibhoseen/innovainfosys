@@ -33,6 +33,8 @@ class AssetsName {
   static const String lightSmartImagePng = 'assets/images/light.png';
   static const String airSmartImagePng = 'assets/images/smart_air.png';
   static const String tvSmartImagePng = 'assets/images/smart_tv.png';
+  static const String wireLessSpeakerSmartImagePng = 'assets/images/wire_less_speaker.png';
+
 
 
 }

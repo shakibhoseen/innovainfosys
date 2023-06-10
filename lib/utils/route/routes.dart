@@ -3,6 +3,7 @@ import 'package:small_home_application/utils/route/routes_name.dart';
 import 'package:small_home_application/view/device_active_screen.dart';
 import 'package:small_home_application/view/home_screen.dart';
 import 'package:small_home_application/view/parent_screen.dart';
+import 'package:small_home_application/view/room_screen.dart';
 
 
 class Routes {
@@ -18,6 +19,10 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const ParentScreen(),);
         case RoutesName.deviceActiveScreen:
         return MaterialPageRoute(builder: (context) => const DeviceActiveScreen(),);
+      case RoutesName.roomScreen:
+        return MaterialPageRoute(
+          builder: (context) => const RoomScreen(),
+        );
       default:
         return MaterialPageRoute(builder: (context) {
           return const Scaffold(

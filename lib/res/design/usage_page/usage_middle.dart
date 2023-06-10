@@ -6,20 +6,39 @@ import 'package:small_home_application/res/constant.dart';
 import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
 
-final List<UsageHomeModel> usageItems =[
-  UsageHomeModel('Lamp', 'Kitchen-Bedroom', 12, 1000, 8, -10, true),
+final List<UsageHomeModel> usageItems = [
+  UsageHomeModel('Lamp', 'Kitchen-Bedroom', AssetsName.lightSmartImagePng, 12,
+      1000, 8, -10, false),
+  UsageHomeModel('Air Conditioner', 'Kitchen-Bedroom',
+      AssetsName.airSmartImagePng, 5, 1000, 18, -17, true),
+  UsageHomeModel('Wireless Speaker', 'Bedroom',
+      AssetsName.wireLessSpeakerSmartImagePng, 12, 1090, 8, -10, true),
+  UsageHomeModel('Television', 'Livingroom', AssetsName.tvSmartImagePng, 7,
+      1000, 10, -100, true),
+  UsageHomeModel('Lamp', 'Kitchen-Bedroom', AssetsName.lightSmartImagePng, 12,
+      1000, 8, -10, true),
 ];
 
-Widget UsageHomeDesign(){
+Widget UsageHomeDesign() {
   return Column(
     children: [
-      usageItemDesign(),
-      usageItemDesign(),
+      ListView.builder(
+        padding: EdgeInsets.symmetric(horizontal: 8),
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: usageItems.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6.0),
+            child: usageItemDesign(usageItems[index]),
+          );
+        },
+      )
     ],
   );
 }
 
-Widget usageItemDesign(){
+Widget usageItemDesign(UsageHomeModel usageHomeModel) {
   return Container(
     padding: const EdgeInsets.all(8),
     decoration: BoxDecoration(
@@ -29,24 +48,34 @@ Widget usageItemDesign(){
     child: Row(
       children: [
         Container(
-          padding: EdgeInsets.all(8),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(8),
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
           ),
-          child: Image.asset(AssetsName.lightSmartImagePng, height: 40, width: 40,),
+          child: Image.asset(
+            usageHomeModel.imageAsset,
+            height: 40,
+            width: 40,
+          ),
         ),
         addHorizontalSpace(8),
         Flexible(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Lamp', style: Constant.popins_base(fontWeight: FontWeight.w600),),
-              Text('Kitchen - Bedroom', style: Constant.popins_sm(),),
+              Text(
+                usageHomeModel.deviceName,
+                style: Constant.popins_base(fontWeight: FontWeight.w600),
+              ),
+              Text(
+                usageHomeModel.roomName,
+                style: Constant.popins_sm(),
+              ),
               Row(
                 children: [
                   Text(
-                    '8 Unit',
+                    '${usageHomeModel.consumeEnergy} Unit',
                     style: Constant.popins_sm(),
                   ),
                   addHorizontalSpace(8),
@@ -56,7 +85,7 @@ Widget usageItemDesign(){
                   ),
                   addHorizontalSpace(8),
                   Text(
-                    '12 Jam',
+                    '${usageHomeModel.jamValue} Jam',
                     style: Constant.popins_sm(),
                   ),
                 ],
@@ -67,14 +96,18 @@ Widget usageItemDesign(){
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text('1000 Kw/h', style: Constant.popins_base(fontWeight: FontWeight.w600),),
-
+            Text(
+              '${usageHomeModel.powerOfEnergy} Kw/h',
+              style: Constant.popins_base(fontWeight: FontWeight.w600),
+            ),
             Row(
               children: [
-                SvgPicture.asset(AssetsName.upIconImageSvg),
+                SvgPicture.asset(usageHomeModel.isIncrease? AssetsName.upIconImageSvg : AssetsName.downIconImageSvg),
                 addHorizontalSpace(8),
-
-                Text('-10.0%', style: Constant.popins_sm(),),
+                Text(
+                  '${usageHomeModel.savePercent}%',
+                  style: Constant.popins_sm(),
+                ),
               ],
             ),
           ],
