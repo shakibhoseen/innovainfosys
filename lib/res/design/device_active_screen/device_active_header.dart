@@ -5,6 +5,7 @@ import 'package:small_home_application/res/design/homepage/home_middle.dart';
 import 'package:small_home_application/res/design/mini_box.dart';
 import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
+import 'package:small_home_application/utils/route/routes_name.dart';
 
 Widget header(BuildContext context) {
   return Row(
@@ -32,7 +33,7 @@ Widget header(BuildContext context) {
               fontSize: 24, fontWeight: FontWeight.w600, color: Colors.white)),
       Container(
           decoration:
-              BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+              const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
           child: IconButton(
             onPressed: () {},
             icon: const Icon(Icons.search, color: Colors.black,),
@@ -73,15 +74,19 @@ Widget deviceActiveHomeDesign() {
       ),
       GridView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: deviceActiveItems.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 5,
           mainAxisSpacing: 5,
         ),
         itemBuilder: (context, index) {
-          return homeActiveItemDesign(deviceActiveItems[index]);
+          return GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, RoutesName.lampScreen);
+              },
+              child: homeActiveItemDesign(deviceActiveItems[index]));
         },
       ),
       addVerticalSpace(9),

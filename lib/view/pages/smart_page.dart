@@ -15,6 +15,7 @@ class SmartPage extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
+          automaticallyImplyLeading: false,
           collapsedHeight: 100,
           toolbarHeight: 50,
           shape: MyCustomShape(30),

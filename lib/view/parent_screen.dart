@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:small_home_application/res/constant.dart';
 import 'package:small_home_application/res/icons/bottom_nav_icons.dart';
 import 'package:small_home_application/res/my_colors.dart';
+import 'package:small_home_application/utils/utils.dart';
 import 'package:small_home_application/view/pages/home_page.dart';
 import 'package:small_home_application/view/pages/profile_page.dart';
 import 'package:small_home_application/view/pages/smart_page.dart';
@@ -25,9 +26,9 @@ class ParentScreen extends StatelessWidget {
     final bottomNavBarViewModel = Provider.of<BottomNavBarViewModel>(context);
     return Scaffold(
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: MyColors.main2Color,
-          borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 9),
         child: GNav(
@@ -59,6 +60,10 @@ class ParentScreen extends StatelessWidget {
           )
         ],
           onTabChange: (index){
+             if(index==3){
+               Utils.showFlashBarMessage('I have not found any screen that related to profile so disable this.', FlasType.error, context);
+               return;
+             }
              bottomNavBarViewModel.setPageIndex(index);
           },
         ),

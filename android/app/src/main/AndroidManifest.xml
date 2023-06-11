@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.small_home_application">
+    package="flutter.innovainfosys.shakib_hossen_md">
    <application
-        android:label="small_home_application"
+        android:label="shakib-3131-iiflutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

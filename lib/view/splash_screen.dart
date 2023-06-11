@@ -1,14 +1,15 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 import 'package:small_home_application/res/assets_name.dart';
 
-import 'package:small_home_application/res/component/my_shadow.dart';
 import 'package:small_home_application/res/constant.dart';
 import 'package:small_home_application/res/design/splash_screen/splash_design.dart';
 import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
+import 'package:small_home_application/utils/route/routes_name.dart';
+import 'package:small_home_application/utils/utils.dart';
 
 
 const String subTitle =
@@ -111,31 +112,12 @@ class SplashScreen extends StatelessWidget {
                         ),
                         Image.asset(AssetsName.splashBackgroundPng),
                         addVerticalSpace(6),
-                        Container(
-                          decoration: BoxDecoration(
-                            boxShadow: MyShadow.boxShadow5(),
-                          ),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: MyColors.mainColor,
-                                padding: EdgeInsets.all(12),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                  side: BorderSide(),
-                                )),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  'Get Started',
-                                  style:
-                                      Constant.popins_lg(color: MyColors.white),
-                                ),
-                                SvgPicture.asset(AssetsName.nextIconImageSvg),
-                              ],
-                            ),
-                          ),
+                        customSplashButton(
+                          onPress: (){
+                           // Utils.showFlashBarMessage("Welcome to Smart Home", FlasType.success, context);
+                            Navigator.pushNamed(context, RoutesName.parentScreen);
+
+                          }
                         ),
                         addVerticalSpace(4),
                         addVerticalSpace(4),

@@ -10,6 +10,7 @@ import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/res/symbol.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
 import 'package:small_home_application/utils/line_chart_widgets.dart';
+import 'package:small_home_application/utils/route/routes_name.dart';
 
 Widget header(BuildContext context) {
   return Column(
@@ -42,7 +43,7 @@ Widget header(BuildContext context) {
                   color: Colors.white)),
           Container(
               decoration:
-                  BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                  const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
               child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -141,15 +142,18 @@ Widget livingHomeDesign() {
       ),
       GridView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: deviceActiveItems.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 5,
           mainAxisSpacing: 5,
         ),
         itemBuilder: (context, index) {
-          return homeActiveItemDesign(deviceActiveItems[index]);
+          return GestureDetector(
+          onTap: (){
+          Navigator.pushNamed(context, RoutesName.lampScreen);},
+              child: homeActiveItemDesign(deviceActiveItems[index]));
         },
       ),
       addVerticalSpace(9),

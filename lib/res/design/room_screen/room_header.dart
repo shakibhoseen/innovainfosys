@@ -8,6 +8,7 @@ import 'package:small_home_application/res/design/mini_box.dart';
 import 'package:small_home_application/res/my_colors.dart';
 import 'package:small_home_application/utils/helper_widget.dart';
 import 'package:small_home_application/model/home_room_model.dart';
+import 'package:small_home_application/utils/route/routes_name.dart';
 
 
 final List<HomeRoomModel> roomItems = [
@@ -96,7 +97,11 @@ Widget roomHomeDesign() {
           childAspectRatio: .80,
         ),
         itemBuilder: (context, index) {
-          return homeRoomItemDesign(roomItems[index]);
+          return GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, RoutesName.livingRoomScreen);
+              },
+              child: homeRoomItemDesign(roomItems[index]));
         },
       ),
       addVerticalSpace(9),

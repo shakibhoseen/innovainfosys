@@ -130,57 +130,61 @@ final List<DeviceActiveModel> deviceActiveItems = [
       "12$degreeCentiGrade", false),
 ];
 
-List<Widget> homePageActiveDesign(BuildContext context) {
-  return [
-    Padding(
-      padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+Widget homePageActiveDesign(BuildContext context) {
+  return Column(
+    children: [
 
-          Row(
+        Padding(
+          padding: const EdgeInsets.only(top: 12, left: 8, right: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Active',
-                style: Constant.popins_xl(fontWeight: FontWeight.w600),
+
+              Row(
+                children: [
+                  Text(
+                    'Active',
+                    style: Constant.popins_xl(fontWeight: FontWeight.w600),
+                  ),
+                  addHorizontalSpace(2),
+                  miniBadgeBox('6'),
+                ],
               ),
-              addHorizontalSpace(2),
-              miniBadgeBox('6'),
+              InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, RoutesName.deviceActiveScreen);
+                },
+                child: Text(
+                  'See All',
+                  style: Constant.popins_lg(
+                      color: MyColors.main2Color, fontWeight: FontWeight.w600),
+                ),
+              ),
             ],
           ),
-          InkWell(
-            onTap: (){
-              Navigator.pushNamed(context, RoutesName.deviceActiveScreen);
-            },
-            child: Text(
-              'See All',
-              style: Constant.popins_lg(
-                  color: MyColors.main2Color, fontWeight: FontWeight.w600),
-            ),
-          ),
-        ],
-      ),
-    ),
+        ),
 
-    SizedBox(
-      height: 175,
-      child: ListView.builder(
-        itemCount: roomItems.length,
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 4),
-            child: GestureDetector(
-              onTap: (){
-                  Navigator.pushNamed(context, RoutesName.lampScreen);
-              },
-                child: homeActiveItemDesign(deviceActiveItems[index])),
-          );
-        },
+      Padding(
+        padding: const EdgeInsets.symmetric( horizontal: 8.0),
+        child: GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: deviceActiveItems.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 5,
+            mainAxisSpacing: 5,
+          ),
+          itemBuilder: (context, index) {
+            return GestureDetector( onTap: (){
+              Navigator.pushNamed(context, RoutesName.lampScreen);
+            }, child: homeActiveItemDesign(deviceActiveItems[index]));
+          },
+        ),
       ),
-    ),
-  ];
+
+    ],
+  );
 }
 
 Widget homeActiveItemDesign(DeviceActiveModel activeModel) {

@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
+          automaticallyImplyLeading: false,
           collapsedHeight: 150,
           toolbarHeight: 60,
           shape: MyCustomShape(30),
@@ -24,11 +25,14 @@ class HomePage extends StatelessWidget {
 
         SliverToBoxAdapter(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               ...homePageRoomDesign(context),
-              ...homePageActiveDesign(context),
             ],
           )
+        ),
+        SliverToBoxAdapter(
+            child: homePageActiveDesign(context),
         ),
 
       ],
