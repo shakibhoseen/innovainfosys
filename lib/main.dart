@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           ),
           canvasColor: MyColors.backGroundApplicationColor,
         ),
-        initialRoute:  RoutesName.parentScreen,
+        initialRoute:  RoutesName.splashScreen,
         onGenerateRoute:  Routes.genarateRoute,
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class LampViewModel with ChangeNotifier{
-   double _value = 0;
+   double _value = 90;
 
   double get getBrightness => _value;
 

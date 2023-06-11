@@ -57,21 +57,12 @@ Widget header() {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Good morning',
+              'profile page',
               style: Constant.popins_changeable_size(
                   fontSize: 24, color: Colors.white),
               maxLines: 1,
             ),
-            Text(
-              'Hello there!',
-              style: Constant.popins_base(),
-              maxLines: 1,
-            ),
-            Text(
-              'Hello there!',
-              style: Constant.popins_base(),
-              maxLines: 1,
-            )
+
           ],
         ),
       ),
@@ -90,9 +81,7 @@ Widget backgorundAppBar() {
     child: Column(
       children: [
         addVerticalSpace(50),
-        SizedBox(height: 180, child: CustomStepperProgress(onChanged: (value){
-          Utils.showToastMessage('the value is ${value}');
-        },)),
+
       ],
     ),
   );

@@ -6,6 +6,7 @@ import 'package:small_home_application/view/lamp_screen.dart';
 import 'package:small_home_application/view/living_room_screen.dart';
 import 'package:small_home_application/view/parent_screen.dart';
 import 'package:small_home_application/view/room_screen.dart';
+import 'package:small_home_application/view/splash_screen.dart';
 
 
 class Routes {
@@ -13,10 +14,10 @@ class Routes {
     switch (settings.name) {
       case RoutesName.homeScreen:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
-      // case RoutesName.loginScreen:
-      //   return MaterialPageRoute(
-      //     builder: (context) =>  const LoginScreen(),
-      //   );
+      case RoutesName.splashScreen:
+        return MaterialPageRoute(
+          builder: (context) =>  const SplashScreen(),
+        );
       case RoutesName.parentScreen:
         return MaterialPageRoute(builder: (context) => const ParentScreen(),);
         case RoutesName.deviceActiveScreen:

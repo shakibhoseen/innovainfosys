@@ -4,8 +4,9 @@ import 'package:small_home_application/res/my_colors.dart';
 
 class CustomStepperProgress extends StatefulWidget {
   final ValueChanged<double> onChanged;
+  final double sliderValue;
 
-  const CustomStepperProgress({Key? key, required this.onChanged}) : super(key: key);
+  const CustomStepperProgress({Key? key, required this.onChanged, this.sliderValue = 30}) : super(key: key);
 
   @override
   _CustomSliderState createState() => _CustomSliderState();

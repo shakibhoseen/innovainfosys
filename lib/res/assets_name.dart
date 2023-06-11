@@ -1,4 +1,5 @@
 class AssetsName {
+  static const String splashBackgroundPng = 'assets/images/splash_image.png';
   static const String livingRoomHomePng = 'assets/images/living_room.png';
   static const String bedRoomHomePng = 'assets/images/bedroom.png';
   static const String kitchenRoomHomePng = 'assets/images/kitchen.png';
@@ -17,6 +18,7 @@ class AssetsName {
       'assets/images/sun_behind_cloud.svg';
   static const String windIconImageSvg = 'assets/images/wind.svg';
   static const String filterIconImageSvg = 'assets/images/filter_icon.svg';
+  static const String nextIconImageSvg = 'assets/images/next.svg';
 
   static const String deleteIconImageSvg = 'assets/images/delete.svg';
   static const String editIconImageSvg = 'assets/images/edit.svg';

@@ -115,7 +115,7 @@ Widget backgroundAppBar(BuildContext context, LampViewModel lampViewModel) {
                   print("lamp");
                   lampViewModel.setBrightness(value);
                   print("call");
-                },)),
+                }, sliderValue: lampViewModel.getBrightness,)),
                 Image.asset(AssetsName.lamLightOnPng),
               ],
             ),
